@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TLSM Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+   <!-- Favicons -->
+   <link href="{% static 'outer/img/favicon.jpg' %}" rel="icon" />
+   <link href="{% static 'outer/img/apple-touch-icon.png' %}" rel="apple-touch-icon" />
+
+   <!-- Google Fonts -->
+   <link
+     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+     rel="stylesheet"
+   />
+
+   <!-- Vendor CSS Files -->
+   <link href="{% static 'outer/vendor/aos/aos.css' %}" rel="stylesheet" />
+   <link
+     href="{% static 'outer/vendor/bootstrap/css/bootstrap.min.css' %}"
+     rel="stylesheet"
+   />
+   <link
+     href="{% static 'outer/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+     rel="stylesheet"
+   />
+   <link href="{% static 'outer/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+   <link
+     href="{% static 'outer/vendor/glightbox/css/glightbox.min.css' %}"
+     rel="stylesheet"
+   />
+   <link href="{% static 'outer/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet" />
+
+   <!-- Template Main CSS File -->
+   <link href="{% static 'outer/css/style.css' %}" rel="stylesheet" />
+  {% block extend_head %}
+
+  {% endblock %}
+    
+</head>
+
+<body>
+    <main id="main" class="main">
+        
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="copyright">
+          &copy; Copyright <strong><span>TLMS</span></strong>. All Rights Reserved
+        </div>
+      </footer><!-- End Footer -->
+    
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    
+       <!-- Vendor JS Files -->
+    <script src="{% static 'outer/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'outer/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'outer/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'outer/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'outer/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'outer/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'outer/vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <!-- <script src="{% static 'outer/vendor/php-email-form/validate.js' %}"></script> -->
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'outer/js/main.js' %}"></script>
+
+      {% block extend_footer %}
+
+      {% endblock %}
+
+    </body>
+    
+    </html>
+
+

@@ -1,0 +1,207 @@
+{% extends 'main_inner.html' %}
+{% load static %}
+
+{% block extend_head %}
+    <title>adding informations</title>
+{% endblock %}
+
+ {% block content %}
+
+
+ <header id="header" class="header fixed-top d-flex align-items-center">
+  
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% url 'user_management:profile_view' %}" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">TLMS</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <span>Logged in as: {{ user.username }}</span> 
+    </div><!-- End Logo -->
+
+
+    <nav class="header-nav ms-auto">
+          
+          <a href="{% url 'user_management:login_view' %}">Sign Out </a> 
+  </nav>
+
+</header>
+
+ <aside id="sidebar" class="sidebar">
+  
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'user_management:profile_view' %}">
+        <i class="bi bi-person"></i>
+        <span>Profile</span>
+      </a>
+    </li><!-- End view my profile Nav -->
+
+    <li class="nav-heading">Pages</li>
+
+    <!-- <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'user_management:adding_informations' %}">
+        <i class="bi bi-grid"></i>
+        <span>additional info</span>
+      </a>
+    </li> End additional Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'user_management:notification' %}">
+        <i class="bi bi-bell-fill"></i>
+        <span>Notifications</span>
+      </a>
+    </li><!-- End Blank Page Nav -->
+
+    <!-- <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-faq.html">
+        <i class="bi bi-question-circle"></i>
+        <span>F.A.Q</span>
+      </a>
+    </li>End F.A.Q Page Nav -->
+
+    <!-- <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-contact.html">
+        <i class="bi bi-envelope"></i>
+        <span>Contact</span>
+      </a>
+    </li>End Contact Page Nav -->
+<!-- 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'user_management:registration_view' %}">
+        <i class="bi bi-card-list"></i>
+        <span>Register</span>
+      </a>
+    </li> <!-- End Register Page Nav -->
+
+    <!-- <li class="nav-item">
+      <a class="nav-link collapsed" href="{% url 'user_management:login_view' %}">
+        <i class="bi bi-box-arrow-in-right"></i>
+        <span>Login</span> -->
+      </a> 
+    </li><!-- End Login Page Nav -->
+
+    <!-- <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-error-404.html">
+        <i class="bi bi-dash-circle"></i>
+        <span>Error 404</span>
+      </a>
+    </li>End Error 404 Page Nav -->
+
+  </ul>
+
+</aside>
+<!-- End Sidebar  -->
+
+ <div class="pagetitle">
+      <h1>Add your information</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'user_management:adding_informations' %}">Home</a></li>
+          <li class="breadcrumb-item active">Add your information</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <div class="card p-4">
+      <div class="card-body">
+
+        <!-- Multi Columns Form -->
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="row mb-3">
+                <label for="{{ form.first_name.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">First Name:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" value="{{ form.first_name.value|default:'' }}" placeholder="Enter your first name" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.middle_name.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Middle Name:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.middle_name.id_for_label }}" name="{{ form.middle_name.name }}" value="{{ form.middle_name.value|default:'' }}" placeholder="Enter your middle name" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.surname.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Surname:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.surname.id_for_label }}" name="{{ form.surname.name }}" value="{{ form.surname.value|default:'' }}" placeholder="Enter your surname" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.gender.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Gender:</label>
+                <div class="col-md-8 col-lg-9">
+                    <select id="{{ form.gender.id_for_label }}" name="{{ form.gender.name }}" class="form-select">
+                        <option value="M" {% if form.gender.value == 'M' %}selected{% endif %}>Male</option>
+                        <option value="F" {% if form.gender.value == 'F' %}selected{% endif %}>Female</option>
+                        <option value="O" {% if form.gender.value == 'O' %}selected{% endif %}>Other</option>
+                    </select>
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.phone_number.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Phone Number:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.phone_number.id_for_label }}" name="{{ form.phone_number.name }}" value="{{ form.phone_number.value|default:'' }}" placeholder="Enter your phone number" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.level_of_education.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Level of Education:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.level_of_education.id_for_label }}" name="{{ form.level_of_education.name }}" value="{{ form.level_of_education.value|default:'' }}" placeholder="Enter your level of education" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.school_currently_teaching.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">School Currently Teaching:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.school_currently_teaching.id_for_label }}" name="{{ form.school_currently_teaching.name }}" value="{{ form.school_currently_teaching.value|default:'' }}" placeholder="Enter your school currently teaching" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.council_currently_working.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Council Currently Working:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.council_currently_working.id_for_label }}" name="{{ form.council_currently_working.name }}" value="{{ form.council_currently_working.value|default:'' }}" placeholder="Enter your council currently working" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.district_council_preference.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">District Council Preference:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.district_council_preference.id_for_label }}" name="{{ form.district_council_preference.name }}" value="{{ form.district_council_preference.value|default:'' }}" placeholder="Enter your district council preference" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.first_subject_major.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">First Subject Major:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.first_subject_major.id_for_label }}" name="{{ form.first_subject_major.name }}" value="{{ form.first_subject_major.value|default:'' }}" placeholder="Enter your first subject major" class="form-control">
+                </div>
+            </div>
+        
+            <div class="row mb-3">
+                <label for="{{ form.second_subject.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Second Subject:</label>
+                <div class="col-md-8 col-lg-9">
+                    <input type="text" id="{{ form.second_subject.id_for_label }}" name="{{ form.second_subject.name }}" value="{{ form.second_subject.value|default:'' }}" placeholder="Enter your second subject" class="form-control">
+                </div>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+        
+
+      </div>
+    </div>
+
+    {% endblock %}
+
+ 
+    {% block extend_footer %}
+
+    {% endblock %}

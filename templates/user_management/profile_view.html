@@ -1,0 +1,287 @@
+{% extends 'main_inner.html' %}
+{% load static %}
+
+{% block extend_head %}
+    <title> profile view</title>
+{% endblock %}
+
+    {% block content %}
+
+    <header id="header" class="header fixed-top d-flex align-items-center">
+  
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="{% url 'user_management:profile_view' %}" class="logo d-flex align-items-center">
+            <img src="assets/img/logo.png" alt="">
+            <span class="d-none d-lg-block">TLMS</span>
+          </a>
+          <i class="bi bi-list toggle-sidebar-btn"></i>
+          <span>Logged in as: {{ user.username }}</span> 
+        </div><!-- End Logo -->
+    
+    
+        <nav class="header-nav ms-auto">
+              
+              <a href="{% url 'user_management:login_view' %}">Sign Out </a> 
+      </nav>
+    
+    
+    
+    </header>
+     <aside id="sidebar" class="sidebar">
+      
+      <ul class="sidebar-nav" id="sidebar-nav">
+    
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{% url 'user_management:profile_view' %}">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li><!-- End view my profile Nav -->
+    
+        <li class="nav-heading">Pages</li>
+    
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="{% url 'user_management:adding_informations' %}">
+            <i class="bi bi-grid"></i>
+            <span>additional info</span>
+          </a>
+        </li> End additional Page Nav -->
+    
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="{% url 'user_management:notification' %}">
+            <i class="bi bi-bell-fill"></i>
+            <span>Notifications</span>
+          </a>
+        </li><!-- End Blank Page Nav -->
+    
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-faq.html">
+            <i class="bi bi-question-circle"></i>
+            <span>F.A.Q</span>
+          </a>
+        </li>End F.A.Q Page Nav -->
+    
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-contact.html">
+            <i class="bi bi-envelope"></i>
+            <span>Contact</span>
+          </a>
+        </li>End Contact Page Nav -->
+    
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="{% url 'user_management:registration_view' %}">
+            <i class="bi bi-card-list"></i>
+            <span>Register</span>
+          </a>
+        </li>< End Register Page Nav -->
+     
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="{% url 'user_management:login_view' %}">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Login</span>
+          </a>
+        </li>End Login Page Nav -->
+    
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-error-404.html">
+            <i class="bi bi-dash-circle"></i>
+            <span>Error 404</span>
+          </a>
+        </li>End Error 404 Page Nav -->
+    
+      </ul>
+    
+    </aside>
+    <!-- End Sidebar  -->
+        <div class="pagetitle">
+            <h1>Profile</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'user_management:home_view' %}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Profile</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section profile">
+            <div class="row">
+                <div class="col-xl-8">
+                    <div class="card">
+                        <div class="card-body pt-3">
+                            <!-- Bordered Tabs -->
+                            <ul class="nav nav-tabs nav-tabs-bordered">
+                                <li class="nav-item">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                                </li>
+                            </ul>
+        
+                            <div class="tab-content pt-2">
+                                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                    <h5>Profile View</h5>
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">First Name:</th>
+                                                <td>{{ user_profile.first_name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Middle Name:</th>
+                                                <td>{{ user_profile.middle_name }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Surname:</th>
+                                                <td>{{ user_profile.surname }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Gender:</th>
+                                                <td>{{ user_profile.get_gender_display }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Phone Number:</th>
+                                                <td>{{ user_profile.phone_number }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Level of Education:</th>
+                                                <td>{{ user_profile.level_of_education }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">School Currently Teaching:</th>
+                                                <td>{{ user_profile.school_currently_teaching }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Council Currently Working:</th>
+                                                <td>{{ user_profile.council_currently_working }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">District Council Preference:</th>
+                                                <td>{{ user_profile.district_council_preference }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">First Subject Major:</th>
+                                                <td>{{ user_profile.first_subject_major }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Second Subject:</th>
+                                                <td>{{ user_profile.second_subject }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </div>
+                                <!-- End of Profile View Tab -->
+        
+                                <div class="tab-pane fade profile-edit" id="profile-edit">
+                                    <h5>Edit profile</h5>
+                                    <section class="section profile">
+                                        <div class="row">
+                                            <div class="col-xl-8">
+                                                <div class="card">
+                                                    <div class="card-body pt-3">
+                                                        <!-- Display a pop-up message if the profile has already been edited -->
+                                                        {% if user_profile.profile_edited %}
+                                                            <div class="alert alert-danger">
+                                                                You have already edited your profile. You cannot edit it again.
+                                                            </div>
+                                                        {% endif %}
+                                    <form method="post" action="{% url 'user_management:profile_view' %}">                                   
+                                         {% csrf_token %}
+                                        <div class="row mb-3">
+                                        <label for="{{ form.first_name.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">First Name:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" value="{{ form.first_name.value|default:'' }}" placeholder="Enter your first name" class="form-control">
+                                        </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                        <label for="{{ form.middle_name.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Middle Name:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.middle_name.id_for_label }}" name="{{ form.middle_name.name }}" value="{{ form.middle_name.value|default:'' }}" placeholder="Enter your middle name" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.surname.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Surname:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.surname.id_for_label }}" name="{{ form.surname.name }}" value="{{ form.surname.value|default:'' }}" placeholder="Enter your surname" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.gender.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Gender:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <select id="{{ form.gender.id_for_label }}" name="{{ form.gender.name }}" class="form-select">
+                                        <option value="M" {% if form.gender.value == 'M' %}selected{% endif %}>Male</option>
+                                        <option value="F" {% if form.gender.value == 'F' %}selected{% endif %}>Female</option>
+                                        <option value="O" {% if form.gender.value == 'O' %}selected{% endif %}>Other</option>
+                                        </select>
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.phone_number.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Phone Number:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.phone_number.id_for_label }}" name="{{ form.phone_number.name }}" value="{{ form.phone_number.value|default:'' }}" placeholder="Enter your phone number" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.level_of_education.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Level of Education:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.level_of_education.id_for_label }}" name="{{ form.level_of_education.name }}" value="{{ form.level_of_education.value|default:'' }}" placeholder="Enter your level of education" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.school_currently_teaching.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">School Currently Teaching:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.school_currently_teaching.id_for_label }}" name="{{ form.school_currently_teaching.name }}" value="{{ form.school_currently_teaching.value|default:'' }}" placeholder="Enter your school currently teaching" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.council_currently_working.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Council Currently Working:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.council_currently_working.id_for_label }}" name="{{ form.council_currently_working.name }}" value="{{ form.council_currently_working.value|default:'' }}" placeholder="Enter your council currently working" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.district_council_preference.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">District Council Preference:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.district_council_preference.id_for_label }}" name="{{ form.district_council_preference.name }}" value="{{ form.district_council_preference.value|default:'' }}" placeholder="Enter your district council preference" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.first_subject_major.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">First Subject Major:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.first_subject_major.id_for_label }}" name="{{ form.first_subject_major.name }}" value="{{ form.first_subject_major.value|default:'' }}" placeholder="Enter your first subject major" class="form-control">
+                                        </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                        <label for="{{ form.second_subject.id_for_label }}" class="col-md-4 col-lg-3 col-form-label">Second Subject:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                        <input type="text" id="{{ form.second_subject.id_for_label }}" name="{{ form.second_subject.name }}" value="{{ form.second_subject.value|default:'' }}" placeholder="Enter your second subject" class="form-control">
+                                        </div>
+                                        </div>
+                                        <!-- Add other input fields here for editing profile details -->
+                                        <button type="submit" class="btn btn-primary"{% if user_profile.profile_edited %}disabled{% endif %}>Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+    
+    
+
+
+                {% endblock %}
+
+ 
+                {% block extend_footer %}
+            
+                {% endblock %}
+            

@@ -1,0 +1,542 @@
+{% extends 'main_outer.html' %}
+{% load static %}
+
+{% block extend_head %}
+    <title>home</title>
+{% endblock %}
+
+    {% block content %}
+
+    <header id="header" class="header fixed-top d-flex align-items-center">
+  
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="{% url 'user_management:profile_view' %}" class="logo d-flex align-items-center">
+          <!-- <img src="{% static 'outer/img/logo.png' %}" alt=""> -->
+          <span class="d-none d-lg-block">TLMS</span>
+        </a>
+        <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
+      </div><!-- End Logo -->
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  
+  
+  </header>
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg col-md">
+          <h1>Welcome to <span>TLMS</span></h1>
+          <h2>
+            We are revolutionizing educator relocations through an innovative online platform.
+          </h2>
+          <div class="d-flex">
+            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <!-- <a
+              href="https://www.youtube.com/watch?v=jDDaplaOz7Q"
+              class="glightbox btn-watch-video"
+              ><i class="bi bi-play-circle"></i><span>Watch Video</span></a
+            > -->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-lg col-md">
+          <a href="{% url 'user_management:registration_view' %}" class="btn btn-primary btn-lg btn-md m-5">Register</a>
+          <a href="{% url 'user_management:login_view' %}" class="btn btn-outline-primary btn-lg btn-md ">Login</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>About TLMS</h2>
+        <h3>Discover <span>TLMS</span></h3>
+        <p>
+          TLMS is an innovative online platform dedicated to simplifying educator relocations.
+        </p>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+          <img src="{% static 'outer/img/tlms_image.jpg' %}" class="img-fluid" alt="TLMS Image" />
+        </div>
+        <div
+          class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h3>
+            Transforming the Way Educators Relocate
+          </h3>
+          <p class="fst-italic">
+            We are on a mission to simplify the process of changing work locations for educators.
+          </p>
+          <ul>
+            <li>
+              <i class="bx bx-store-alt"></i>
+              <div>
+                <h5>Comprehensive Profiles</h5>
+                <p>
+                  Teachers can create detailed profiles to find suitable matches for relocation.
+                </p>
+              </div>
+            </li>
+            <li>
+              <i class="bx bx-images"></i>
+              <div>
+                <h5>Robust Search Filters</h5>
+                <p>
+                  Our platform offers powerful search filters to narrow down swap options.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <p>
+            TLMS streamlines the relocation process, saving educators time and effort, while providing access to a broader range of swap opportunities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Our Services</h2>
+            <h3>Explore Our <span>Services</span></h3>
+            <p>
+              TLMS offers a range of services to simplify educator relocations and enhance the teaching experience.
+            </p>
+          </div>
+      
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bx bxl-dribbble"></i></div>
+                <h4><a href="#">Comprehensive Profiles</a></h4>
+                <p>
+                  Educators can create detailed profiles showcasing their expertise and preferences.
+                </p>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-file"></i></div>
+                <h4><a href="#">Robust Search Filters</a></h4>
+                <p>
+                  Our platform offers powerful search filters to help educators find suitable relocation options.
+                </p>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-tachometer"></i></div>
+                <h4><a href="#">Instant Messaging</a></h4>
+                <p>
+                  Secure messaging enables educators to connect and explore potential swaps.
+                </p>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-world"></i></div>
+                <h4><a href="#">Alerts and Notifications</a></h4>
+                <p>
+                  TLMS sends real-time notifications when compatible swap opportunities arise.
+                </p>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-slideshow"></i></div>
+                <h4><a href="#">Secure Documentation Exchange</a></h4>
+                <p>
+                  Our platform provides a secure environment for exchanging necessary documents and details for smooth transitions.
+                </p>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="icon-box">
+                <div class="icon"><i class="bx bx-arch"></i></div>
+                <h4><a href="#">Community and Support</a></h4>
+                <p>
+                  TLMS fosters a community of educators who share similar aspirations, creating an environment of mutual support.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    
+      <!-- ======= Team Section ======= -->
+      <section id="team" class="team section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Our Team</h2>
+            <h3>Meet the <span>TLMS Team</span></h3>
+            <p>
+              Get to know the dedicated professionals behind Teacher Linked Management System (TLMS).
+            </p>
+          </div>
+      
+          <div class="row">
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="member">
+                <div class="member-img">
+                  <img
+                    src="{% static 'outer/img/team/team-6.jpg' %}"
+                    class="img-fluid"
+                    alt="Abraham J Kijazi"
+                  />
+                  <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Abraham J Kijazi</h4>
+                  <span>IT (Full Stack Developer)</span>
+                </div>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="member">
+                <div class="member-img">
+                  <img
+                    src="{% static 'outer/img/team/team-8.jpg' %}"
+                    class="img-fluid"
+                    alt="Hassan Jemedari"
+                  />
+                  <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Hassan Jemedari</h4>
+                  <span>Programmer</span>
+                </div>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="member">
+                <div class="member-img">
+                  <img
+                    src="{% static 'outer/img/team/team-10.jpg' %}"
+                    class="img-fluid"
+                    alt="Barakati Abdi"
+                  />
+                  <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Barakati Abdi</h4>
+                  <span>Programmer</span>
+                </div>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="member">
+                <div class="member-img">
+                  <img
+                    src="{% static 'outer/img/team/team-9.jpg' %}"
+                    class="img-fluid"
+                    alt="Aidan Yusto"
+                  />
+                  <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Aidan Yusto</h4>
+                  <span>Research Investigator</span>
+                </div>
+              </div>
+            </div>
+      
+            <div
+              class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="member">
+                <div class="member-img">
+                  <img
+                    src="{% static 'outer/img/team/team-5.jpg' %}"
+                    class="img-fluid"
+                    alt="Sabina Kayoka"
+                  />
+                  <div class="social">
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>Sabina Kayoka</h4>
+                  <span>Designer</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- ======= Frequently Asked Questions Section ======= -->
+      <section id="faq" class="faq section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Get Answers to <span>Your Questions</span></h3>
+            <p>
+              Find answers to commonly asked questions about Teacher Linked Management System (TLMS).
+            </p>
+          </div>
+      
+          <div class="row justify-content-center">
+            <div class="col-xl-10">
+              <ul class="faq-list">
+                <li>
+                  <div
+                    data-bs-toggle="collapse"
+                    class="collapsed question"
+                    href="#faq1"
+                  >
+                    What is TLMS and how does it work?
+                    <i class="bi bi-chevron-down icon-show"></i
+                    ><i class="bi bi-chevron-up icon-close"></i>
+                  </div>
+                  <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+                    <p>
+                      TLMS, or Teacher Linked Management System, is an innovative online platform that simplifies the process of teacher relocations. TLMS allows educators to connect with each other and explore opportunities to exchange work locations, making the relocation process seamless and efficient.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <div
+                    data-bs-toggle="collapse"
+                    href="#faq2"
+                    class="collapsed question"
+                  >
+                    How can I create a profile on TLMS?
+                    <i class="bi bi-chevron-down icon-show"></i
+                    ><i class="bi bi-chevron-up icon-close"></i>
+                  </div>
+                  <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+                    <p>
+                      To create a profile on TLMS, you can visit our website and click on the "Register" button. Follow the registration process to set up your profile by providing information about your teaching experience, specialties, and desired relocation destinations.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <div
+                    data-bs-toggle="collapse"
+                    href="#faq3"
+                    class="collapsed question"
+                  >
+                    How can TLMS help me in my teaching career?
+                    <i class="bi bi-chevron-down icon-show"></i
+                    ><i class="bi bi-chevron-up icon-close"></i>
+                  </div>
+                  <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+                    <p>
+                      TLMS offers educators the opportunity to explore new teaching environments and connect with colleagues who are looking to exchange work locations. This can expand your teaching horizons, create new opportunities, and foster a sense of community among educators.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <div
+                    data-bs-toggle="collapse"
+                    href="#faq4"
+                    class="collapsed question"
+                  >
+                    Is TLMS secure for exchanging sensitive documents?
+                    <i class="bi bi-chevron-down icon-show"></i
+                    ><i class="bi bi-chevron-up icon-close"></i>
+                  </div>
+                  <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+                    <p>
+                      Yes, TLMS provides a secure environment for teachers to exchange necessary documents and details for a smooth transition during relocations. We prioritize the security and privacy of our users' information.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <div
+                    data-bs-toggle="collapse"
+                    href="#faq5"
+                    class="collapsed question"
+                  >
+                    How can I stay updated on potential swap opportunities?
+                    <i class="bi bi-chevron-down icon-show"></i
+                    ><i class="bi bi-chevron-up icon-close"></i>
+                  </div>
+                  <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+                    <p>
+                      TLMS sends real-time notifications when compatible swap opportunities arise. This ensures that you are always informed and never miss out on promising matches.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <div
+                    data-bs-toggle="collapse"
+                    href="#faq6"
+                    class="collapsed question"
+                  >
+                    How can I get in touch with TLMS support?
+                    <i class="bi bi-chevron-down icon-show"></i
+                    ><i class="bi bi-chevron-up icon-close"></i>
+                  </div>
+                  <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+                    <p>
+                      If you need assistance or have questions, you can contact TLMS support through our website or by emailing Abrahamkijazi01@gmail.com. Our dedicated support team is here to help you.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      
+      <!-- End Frequently Asked Questions Section -->
+
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Contact Us</h2>
+            <h3><span>Get in Touch</span></h3>
+            <p>
+              Feel free to reach out to us for any inquiries or information.
+            </p>
+          </div>
+      
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6">
+              <div class="info-box mb-4">
+                <i class="bx bx-map"></i>
+                <h3>Our Address</h3>
+                <p>Makumbusho, COSTECH Building, Dar es Salaam, Tanzania</p>
+              </div>
+            </div>
+      
+            <div class="col-lg-3 col-md-6">
+              <div class="info-box mb-4">
+                <i class="bx bx-envelope"></i>
+                <h3>Email Us</h3>
+                <p>abrahamkijazi07@gmail.com</p>
+              </div>
+            </div>
+      
+            <div class="col-lg-3 col-md-6">
+              <div class="info-box mb-4">
+                <i class="bx bx-phone-call"></i>
+                <h3>Call Us</h3>
+                <p>+255 60 000 2577</p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6">
+              <iframe
+                class="mb-4 mb-lg-0"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15965.703679674652!2d39.2258991!3d-6.7556536!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c29f19961b1f6f%3A0x2552d96bfbfcd632!2sCOSTECH%20-%20The%20Commission%20for%20Science%20and%20Technology!5e0!3m2!1sen!2stz!4v1631201691522!5m2!1sen!2stz"
+                frameborder="0"
+                style="border: 0; width: 100%; height: 384px"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    
+      {% endblock %}
+
+ 
+      {% block extend_footer %}
+  
+      {% endblock %}

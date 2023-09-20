@@ -1,0 +1,96 @@
+  {% extends 'main_inner.html' %}
+  {% load static %}
+  
+  {% block extend_head %}
+  <title>Notification</title>
+ {% endblock %}
+  
+   {% block content %}
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% url 'user_management:profile_view' %}" class="logo d-flex align-items-center">
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <span class="d-none d-lg-block">TLSM</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <span> Logged in as: {{ user.username }}</span> 
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      
+      <a href="{% url 'user_management:login_view' %}">Sign Out </a> 
+</nav>   
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'user_management:profile_view' %}">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li><!-- End view my profile Nav -->
+
+      <li class="nav-heading">Pages</li>
+
+     
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{% url 'user_management:notification' %}">
+          <i class="bi bi-bell-fill"></i>
+          <span>Notifications</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+
+  </aside><!-- End Sidebar-->
+
+  
+
+    <div class="pagetitle">
+      <h1>Notifications</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'user_management:home_view' %}">Home</a></li>
+          <li class="breadcrumb-item active">Notifications</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Alert Notification</h5>
+              {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% empty %}
+            <li>No messages or swap requests found.</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {% endblock %}
+
+ 
+    {% block extend_footer %}
+
+    {% endblock %}
